@@ -1,9 +1,8 @@
-package com.deensoft.mathfun;
+package com.deensoft.mathfun.printer;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.LoggerContext;
-import com.deensoft.mathfun.print.FizzPrinter;
 import com.deensoft.mathfun.util.MemoryAppender;
 import org.junit.After;
 import org.junit.Before;
