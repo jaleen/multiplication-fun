@@ -34,6 +34,14 @@ public class FunPrinterTest {
         funPrinter.print(num);
         assertThat(memoryAppender.search( String.valueOf(num), Level.INFO).size()).isEqualTo(1);
     }
+    @Test
+    public void given3ThenPrintFizz() {
+        FunPrinter funPrinter = new FizzPrinter();
+
+        short num = 3;
+        funPrinter.print(num);
+        assertThat(memoryAppender.search( "Fizz", Level.INFO).size()).isEqualTo(1);
+    }
 
     @After
     public void cleanUp() {

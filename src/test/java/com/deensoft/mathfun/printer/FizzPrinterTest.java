@@ -30,8 +30,9 @@ public class FizzPrinterTest {
     @Test
     public void test() {
         FizzPrinter fizzPrinter = new FizzPrinter();
-       
-        fizzPrinter.print();
+
+        short num = 1;
+        fizzPrinter.print(num);
         assertThat(memoryAppender.search(MSG, Level.INFO).size()).isEqualTo(1);
     }
 
