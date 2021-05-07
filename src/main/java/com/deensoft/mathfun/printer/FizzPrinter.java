@@ -9,6 +9,7 @@ public class FizzPrinter implements FunPrinter {
 
     @Override
     public void print(short num) {
-        LOGGER.info(FIZZ);
+        if (num % 3 == 0)
+            LOGGER.info(FIZZ);
     }
 }
