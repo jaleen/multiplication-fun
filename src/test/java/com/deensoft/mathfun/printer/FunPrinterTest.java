@@ -100,6 +100,22 @@ public class FunPrinterTest {
         funPrinter.print(num);
         assertThat(memoryAppender.search( "Buzz", Level.INFO).size()).isEqualTo(0);
     }
+    @Test
+    public void givenMultipleOf3and5ThenPrintFizzBuzz() {
+        FunPrinter funPrinter = new FizzBuzzPrinter();
+
+        short num = 15;
+        funPrinter.print(num);
+        assertThat(memoryAppender.search( "FizzBuzz", Level.INFO).size()).isEqualTo(1);
+    }
+    @Test
+    public void whenNotMultipleOf3and5ThenDoNotPrintFizzBuzz() {
+        FunPrinter funPrinter = new FizzBuzzPrinter();
+
+        short num = 5;
+        funPrinter.print(num);
+        assertThat(memoryAppender.search( "FizzBuzz", Level.INFO).size()).isEqualTo(0);
+    }
     @After
     public void cleanUp() {
         memoryAppender.reset();
