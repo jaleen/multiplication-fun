@@ -43,6 +43,15 @@ public class FunPrinterTest {
         assertThat(memoryAppender.search( "Fizz", Level.INFO).size()).isEqualTo(1);
     }
 
+    @Test
+    public void given5ThenPrintBuzz() {
+        FunPrinter funPrinter = new BuzzPrinter();
+
+        short num = 3;
+        funPrinter.print(num);
+        assertThat(memoryAppender.search( "Buzz", Level.INFO).size()).isEqualTo(1);
+    }
+
     @After
     public void cleanUp() {
         memoryAppender.reset();

@@ -28,10 +28,11 @@ public class BuzzPrinterTest {
 
     }
     @Test
-    public void test() {
+    public void shouldPrintBuzz() {
         BuzzPrinter buzzPrinter = new BuzzPrinter();
 
-        buzzPrinter.print();
+        short num=1;
+        buzzPrinter.print(num);
         assertThat(memoryAppender.search(MSG, Level.INFO).size()).isEqualTo(1);
     }
 
