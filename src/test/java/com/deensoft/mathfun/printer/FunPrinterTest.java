@@ -47,7 +47,7 @@ public class FunPrinterTest {
     public void given5ThenPrintBuzz() {
         FunPrinter funPrinter = new BuzzPrinter();
 
-        short num = 3;
+        short num = 5;
         funPrinter.print(num);
         assertThat(memoryAppender.search( "Buzz", Level.INFO).size()).isEqualTo(1);
     }
@@ -60,12 +60,45 @@ public class FunPrinterTest {
         assertThat(memoryAppender.search( "Fizz", Level.INFO).size()).isEqualTo(1);
     }
     @Test
+    public void givenNegativeNoWhenMultipleOf3ThenPrintFizz() {
+        FunPrinter funPrinter = new FizzPrinter();
+
+        short num = -9;
+        funPrinter.print(num);
+        assertThat(memoryAppender.search( "Fizz", Level.INFO).size()).isEqualTo(1);
+    }
+    @Test
     public void givenANumberWhenNotMultipleOf3ThenDontPrintFizz() {
         FunPrinter funPrinter = new FizzPrinter();
 
         short num = 1;
         funPrinter.print(num);
         assertThat(memoryAppender.search( "Fizz", Level.INFO).size()).isEqualTo(0);
+    }
+
+    @Test
+    public void givenMultipleOf5ThenPrintBuzz() {
+        FunPrinter funPrinter = new BuzzPrinter();
+
+        short num = 25;
+        funPrinter.print(num);
+        assertThat(memoryAppender.search( "Buzz", Level.INFO).size()).isEqualTo(1);
+    }
+    @Test
+    public void givenNegativeNoWhenMultipleOf5ThenPrintBuzz() {
+        FunPrinter funPrinter = new BuzzPrinter();
+
+        short num = -25;
+        funPrinter.print(num);
+        assertThat(memoryAppender.search( "Buzz", Level.INFO).size()).isEqualTo(1);
+    }
+    @Test
+    public void givenANumberWhenNotMultipleOf5ThenDontPrintBuzz() {
+        FunPrinter funPrinter = new BuzzPrinter();
+
+        short num = 1;
+        funPrinter.print(num);
+        assertThat(memoryAppender.search( "Buzz", Level.INFO).size()).isEqualTo(0);
     }
     @After
     public void cleanUp() {

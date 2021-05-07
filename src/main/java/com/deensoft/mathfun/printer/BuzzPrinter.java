@@ -9,6 +9,7 @@ public class BuzzPrinter implements FunPrinter {
 
     @Override
     public void print(short num) {
-        LOGGER.info(BUZZ);
+        if (num % 5 == 0)
+            LOGGER.info(BUZZ);
     }
 }
