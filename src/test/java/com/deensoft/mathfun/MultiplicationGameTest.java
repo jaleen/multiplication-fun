@@ -48,10 +48,18 @@ class MultiplicationGameTest {
         game.play(startNum, finshNum);
 
         List<String> expectedOutput = IntStream.range(1, 100).mapToObj(
-                num -> (num % 15 == 0 ? "FizzBuzz" : (num % 3 == 0 || String.valueOf(num).contains("3") ? "Fizz" : (num % 5 == 0 || String.valueOf(num).contains("5") ? "Buzz" : String.valueOf(num)))))
+                num -> (isFizz(num) && isBuzz(num) ? "FizzBuzz" : (isFizz(num) ? "Fizz" : (isBuzz(num) ? "Buzz" : String.valueOf(num)))))
                 .collect(Collectors.toList());
         List<String> actual = memoryAppender.list.stream().map(ILoggingEvent::getMessage).collect(Collectors.toList());
         assertThat(actual).isEqualTo(expectedOutput);
+    }
+
+    private boolean isBuzz(int num) {
+        return num % 5 == 0 || String.valueOf(num).contains("5");
+    }
+
+    private boolean isFizz(int num) {
+        return num % 3 == 0 || String.valueOf(num).contains("3");
     }
 
 }

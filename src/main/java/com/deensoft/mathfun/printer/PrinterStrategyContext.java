@@ -18,13 +18,21 @@ public class PrinterStrategyContext {
 
     public FunPrinter getStrategy(int num) {
 
-        if (num % 15 == 0) {
+        if (isFizz(num) && isBuzz(num)) {
             return fizzBuzzPrinter;
-        } else if (num % 3 == 0 || String.valueOf(num).contains("3")) {
+        } else if (isFizz(num)) {
             return fizzPrinter;
-        } else if (num % 5 == 0 || String.valueOf(num).contains("5") ) {
+        } else if (isBuzz(num)) {
             return buzzPrinter;
         }
         return numberPrinter;
+    }
+
+    private boolean isBuzz(int num) {
+        return num % 5 == 0 || String.valueOf(num).contains("5");
+    }
+
+    private boolean isFizz(int num) {
+        return num % 3 == 0 || String.valueOf(num).contains("3");
     }
 }

@@ -159,4 +159,13 @@ public class FunPrinterTest {
         memoryAppender.reset();
         memoryAppender.stop();
     }
+
+    @Test
+    public void givenMultipleOf3and5ORContains3OR5ThenPrintFizzBuzz() {
+
+        int num = 51;
+        FunPrinter funPrinter = strategyContext.getStrategy(num);
+        funPrinter.print(num);
+        assertThat(memoryAppender.search("FizzBuzz", Level.INFO).size()).isEqualTo(1);
+    }
 }
