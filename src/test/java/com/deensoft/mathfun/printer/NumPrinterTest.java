@@ -30,7 +30,7 @@ public class NumPrinterTest {
     public void test() {
         NumberPrinter numPrinter = new NumberPrinter();
 
-        short num = 1;
+        int num = 1;
         numPrinter.print(num);
         assertThat(memoryAppender.search( String.valueOf(num), Level.INFO).size()).isEqualTo(1);
     }

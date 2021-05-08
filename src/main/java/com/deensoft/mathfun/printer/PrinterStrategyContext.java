@@ -2,8 +2,9 @@ package com.deensoft.mathfun.printer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class PrinterStrategyContext {
 
     @Autowired
@@ -15,7 +16,7 @@ public class PrinterStrategyContext {
     @Autowired
     private NumberPrinter numberPrinter;
 
-    public FunPrinter getStrategy(short num) {
+    public FunPrinter getStrategy(int num) {
 
         if (num % 15 == 0) {
             return fizzBuzzPrinter;

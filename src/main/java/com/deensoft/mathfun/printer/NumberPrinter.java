@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class NumberPrinter implements FunPrinter {
     private static Logger LOGGER = LoggerFactory.getLogger(BuzzPrinter.class);
 
-    public void print(short num){
+    public void print(int num){
         LOGGER.info(String.valueOf(num));
     }
 }

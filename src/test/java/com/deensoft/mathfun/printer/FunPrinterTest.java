@@ -36,7 +36,7 @@ public class FunPrinterTest {
     @Test
     public void given1ThenPrint1() {
 
-        short num = 1;
+        int num = 1;
         FunPrinter funPrinter = strategyContext.getStrategy(num);
         funPrinter.print(num);
         assertThat(memoryAppender.search(String.valueOf(num), Level.INFO).size()).isEqualTo(1);
@@ -45,7 +45,7 @@ public class FunPrinterTest {
     @Test
     public void given3ThenPrintFizz() {
 
-        short num = 3;
+        int num = 3;
         FunPrinter funPrinter = strategyContext.getStrategy(num);
         funPrinter.print(num);
         assertThat(memoryAppender.search("Fizz", Level.INFO).size()).isEqualTo(1);
@@ -53,7 +53,7 @@ public class FunPrinterTest {
 
     @Test
     public void given5ThenPrintBuzz() {
-        short num = 5;
+        int num = 5;
         FunPrinter funPrinter = strategyContext.getStrategy(num);
         funPrinter.print(num);
 
@@ -63,7 +63,7 @@ public class FunPrinterTest {
     @Test
     public void givenMultipleOf3ThenPrintFizz() {
 
-        short num = 9;
+        int num = 9;
         FunPrinter funPrinter = strategyContext.getStrategy(num);
         funPrinter.print(num);
         assertThat(memoryAppender.search("Fizz", Level.INFO).size()).isEqualTo(1);
@@ -71,7 +71,7 @@ public class FunPrinterTest {
 
     @Test
     public void givenNegativeNoWhenMultipleOf3ThenPrintFizz() {
-        short num = -9;
+        int num = -9;
         FunPrinter funPrinter = strategyContext.getStrategy(num);
         funPrinter.print(num);
         assertThat(memoryAppender.search("Fizz", Level.INFO).size()).isEqualTo(1);
@@ -79,7 +79,7 @@ public class FunPrinterTest {
 
     @Test
     public void givenANumberWhenNotMultipleOf3ThenDontPrintFizz() {
-        short num = 1;
+        int num = 1;
         FunPrinter funPrinter = strategyContext.getStrategy(num);
         funPrinter.print(num);
         assertThat(memoryAppender.search("Fizz", Level.INFO).size()).isEqualTo(0);
@@ -87,7 +87,7 @@ public class FunPrinterTest {
 
     @Test
     public void givenMultipleOf5ThenPrintBuzz() {
-        short num = 25;
+        int num = 25;
         FunPrinter funPrinter = strategyContext.getStrategy(num);
         funPrinter.print(num);
         assertThat(memoryAppender.search("Buzz", Level.INFO).size()).isEqualTo(1);
@@ -95,7 +95,7 @@ public class FunPrinterTest {
 
     @Test
     public void givenNegativeNoWhenMultipleOf5ThenPrintBuzz() {
-        short num = -25;
+        int num = -25;
         FunPrinter funPrinter = strategyContext.getStrategy(num);
         funPrinter.print(num);
         assertThat(memoryAppender.search("Buzz", Level.INFO).size()).isEqualTo(1);
@@ -104,7 +104,7 @@ public class FunPrinterTest {
     @Test
     public void givenANumberWhenNotMultipleOf5ThenDontPrintBuzz() {
 
-        short num = 1;
+        int num = 1;
         FunPrinter funPrinter = strategyContext.getStrategy(num);
         funPrinter.print(num);
         assertThat(memoryAppender.search("Buzz", Level.INFO).size()).isEqualTo(0);
@@ -113,7 +113,7 @@ public class FunPrinterTest {
     @Test
     public void givenMultipleOf3and5ThenPrintFizzBuzz() {
 
-        short num = 15;
+        int num = 15;
         FunPrinter funPrinter = strategyContext.getStrategy(num);
         funPrinter.print(num);
         assertThat(memoryAppender.search("FizzBuzz", Level.INFO).size()).isEqualTo(1);
@@ -121,7 +121,7 @@ public class FunPrinterTest {
 
     @Test
     public void whenNotMultipleOf3and5ThenDoNotPrintFizzBuzz() {
-        short num = 5;
+        int num = 5;
         FunPrinter funPrinter = strategyContext.getStrategy(num);
         funPrinter.print(num);
         assertThat(memoryAppender.search("FizzBuzz", Level.INFO).size()).isEqualTo(0);

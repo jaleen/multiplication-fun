@@ -31,7 +31,7 @@ public class BuzzPrinterTest {
     public void shouldPrintBuzz() {
         BuzzPrinter buzzPrinter = new BuzzPrinter();
 
-        short num=5;
+        int num=5;
         buzzPrinter.print(num);
         assertThat(memoryAppender.search(MSG, Level.INFO).size()).isEqualTo(1);
     }

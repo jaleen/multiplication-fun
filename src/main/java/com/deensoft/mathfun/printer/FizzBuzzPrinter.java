@@ -10,7 +10,7 @@ public class FizzBuzzPrinter implements FunPrinter {
     private static Logger LOGGER = LoggerFactory.getLogger(FizzBuzzPrinter.class);
 
     @Override
-    public void print(short num) {
+    public void print(int num) {
         LOGGER.info(BUZZ);
     }
 }
