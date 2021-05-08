@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class FizzBuzzPrinter implements FunPrinter {
     public static final String BUZZ = "FizzBuzz";
-    private static Logger LOGGER = LoggerFactory.getLogger(FizzBuzzPrinter.class);
+    private static Logger logger = LoggerFactory.getLogger(FizzBuzzPrinter.class);
 
     @Override
     public void print(int num) {
-        LOGGER.info(BUZZ);
+        logger.info(BUZZ);
     }
 }
