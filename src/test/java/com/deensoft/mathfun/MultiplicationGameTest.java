@@ -41,11 +41,11 @@ class MultiplicationGameTest {
     }
 
     @Test
-    public void givenTwoNumsWhenPlayThenPrint() {
+    void givenTwoNumsWhenPlayThenPrint() {
 
-        int finshNum = 100;
+        int finishNum = 100;
         int startNum = 1;
-        game.play(startNum, finshNum);
+        game.play(startNum, finishNum);
 
         List<String> expectedOutput = IntStream.range(1, 100).mapToObj(
                 num -> (isFizz(num) && isBuzz(num) ? "FizzBuzz" : (isFizz(num) ? "Fizz" : (isBuzz(num) ? "Buzz" : String.valueOf(num)))))
