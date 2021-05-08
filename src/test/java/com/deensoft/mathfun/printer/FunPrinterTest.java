@@ -126,7 +126,20 @@ public class FunPrinterTest {
         funPrinter.print(num);
         assertThat(memoryAppender.search("FizzBuzz", Level.INFO).size()).isEqualTo(0);
     }
-
+    @Test
+    public void givenANumberHas3InItThenPrintFizz() {
+        int num = 3;
+        FunPrinter funPrinter = strategyContext.getStrategy(num);
+        funPrinter.print(num);
+        assertThat(memoryAppender.search("Fizz", Level.INFO).size()).isEqualTo(1);
+    }
+    @Test
+    public void givenANumberHas3ButNotDivisibleBy3InItThenPrintFizz() {
+        int num = 13;
+        FunPrinter funPrinter = strategyContext.getStrategy(num);
+        funPrinter.print(num);
+        assertThat(memoryAppender.search("Fizz", Level.INFO).size()).isEqualTo(1);
+    }
     @AfterEach
     public void cleanUp() {
         memoryAppender.reset();
