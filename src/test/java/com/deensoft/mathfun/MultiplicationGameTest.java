@@ -28,6 +28,7 @@ class MultiplicationGameTest {
     private PrinterStrategyContext strategyContext;
     @Autowired
     private MultiplicationGame game;
+
     @BeforeEach
     public void setup() {
         Logger logger = (Logger) LoggerFactory.getLogger(LOGGER_NAME);
@@ -47,7 +48,7 @@ class MultiplicationGameTest {
         game.play(startNum, finshNum);
 
         List<String> expectedOutput = IntStream.range(1, 100).mapToObj(
-                num -> (num % 15 == 0 ? "FizzBuzz" : (num % 5 == 0 ? "Buzz" : (num % 3 == 0 || String.valueOf(num).contains("3") ? "Fizz" : String.valueOf(num)))))
+                num -> (num % 15 == 0 ? "FizzBuzz" : (num % 3 == 0 || String.valueOf(num).contains("3") ? "Fizz" : (num % 5 == 0 || String.valueOf(num).contains("5") ? "Buzz" : String.valueOf(num)))))
                 .collect(Collectors.toList());
         List<String> actual = memoryAppender.list.stream().map(ILoggingEvent::getMessage).collect(Collectors.toList());
         assertThat(actual).isEqualTo(expectedOutput);

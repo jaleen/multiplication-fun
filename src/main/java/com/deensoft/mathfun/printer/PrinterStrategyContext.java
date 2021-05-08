@@ -22,7 +22,7 @@ public class PrinterStrategyContext {
             return fizzBuzzPrinter;
         } else if (num % 3 == 0 || String.valueOf(num).contains("3")) {
             return fizzPrinter;
-        } else if (num % 5 == 0) {
+        } else if (num % 5 == 0 || String.valueOf(num).contains("5") ) {
             return buzzPrinter;
         }
         return numberPrinter;
