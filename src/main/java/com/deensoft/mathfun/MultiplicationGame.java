@@ -14,7 +14,7 @@ public class MultiplicationGame {
     private PrinterStrategyContext context;
 
     public void play(int startNum, int finishNum){
-        IntStream.range(startNum, finishNum).forEach(num-> context.getStrategy(num).print(num));
+        IntStream.range(startNum, finishNum+1).forEach(num-> context.getStrategy(num).print(num));
     }
 
     @PostConstruct

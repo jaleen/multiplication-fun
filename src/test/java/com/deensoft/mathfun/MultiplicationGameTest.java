@@ -47,7 +47,7 @@ class MultiplicationGameTest {
         int startNum = 1;
         game.play(startNum, finishNum);
 
-        List<String> expectedOutput = IntStream.range(1, 100).mapToObj(
+        List<String> expectedOutput = IntStream.range(1, 101).mapToObj(
                 num -> (isFizz(num) && isBuzz(num) ? "FizzBuzz" : (isFizz(num) ? "Fizz" : (isBuzz(num) ? "Buzz" : String.valueOf(num)))))
                 .collect(Collectors.toList());
         List<String> actual = memoryAppender.getLoggedEvents().stream().map(ILoggingEvent::getFormattedMessage).collect(Collectors.toList());
