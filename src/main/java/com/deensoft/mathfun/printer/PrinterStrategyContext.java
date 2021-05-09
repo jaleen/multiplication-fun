@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PrinterStrategyContext {
 
-u    private BuzzPrinter buzzPrinter;
+    private BuzzPrinter buzzPrinter;
     private FizzBuzzPrinter fizzBuzzPrinter;
     private FizzPrinter fizzPrinter;
     private NumberPrinter numberPrinter;
