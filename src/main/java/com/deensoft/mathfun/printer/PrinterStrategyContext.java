@@ -6,14 +6,19 @@ import org.springframework.stereotype.Service;
 @Service
 public class PrinterStrategyContext {
 
-    @Autowired
-    private BuzzPrinter buzzPrinter;
-    @Autowired
+u    private BuzzPrinter buzzPrinter;
     private FizzBuzzPrinter fizzBuzzPrinter;
-    @Autowired
     private FizzPrinter fizzPrinter;
-    @Autowired
     private NumberPrinter numberPrinter;
+
+    @Autowired
+    public PrinterStrategyContext(BuzzPrinter buzzPrinter, FizzBuzzPrinter fizzBuzzPrinter, FizzPrinter fizzPrinter, NumberPrinter numberPrinter) {
+        this.buzzPrinter = buzzPrinter;
+        this.fizzBuzzPrinter = fizzBuzzPrinter;
+        this.fizzPrinter = fizzPrinter;
+        this.numberPrinter = numberPrinter;
+    }
+
 
     public FunPrinter getStrategy(int num) {
 
