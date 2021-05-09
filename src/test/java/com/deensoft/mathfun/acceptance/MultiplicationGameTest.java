@@ -1,9 +1,10 @@
-package com.deensoft.mathfun;
+package com.deensoft.mathfun.acceptance;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.spi.ILoggingEvent;
+import com.deensoft.mathfun.MultiplicationGame;
 import com.deensoft.mathfun.printer.PrinterStrategyContext;
 import com.deensoft.mathfun.util.MemoryAppender;
 import org.junit.jupiter.api.BeforeEach;

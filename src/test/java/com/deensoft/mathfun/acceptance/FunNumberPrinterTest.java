@@ -1,8 +1,11 @@
-package com.deensoft.mathfun.printer;
+
+package com.deensoft.mathfun.acceptance;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.LoggerContext;
+import com.deensoft.mathfun.printer.FunPrinter;
+import com.deensoft.mathfun.printer.PrinterStrategyContext;
 import com.deensoft.mathfun.util.MemoryAppender;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
