@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class NumberPrinter implements FunPrinter {
-    private static Logger LOGGER = LoggerFactory.getLogger(BuzzPrinter.class);
+    private static Logger logger = LoggerFactory.getLogger(NumberPrinter.class);
 
-    public void print(int num){
-        LOGGER.info(String.valueOf(num));
+    public void print(int num) {
+        logger.info("{}", num);
     }
 }
